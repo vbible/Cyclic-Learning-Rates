@@ -80,7 +80,7 @@ if args.cuda:
     model.cuda()
     
 clr = CLR(train_loader, base_lr=0.001, max_lr=0.0045, epochs_per_cycle = 16)
-optimizer = optim.Adam(params = model.parameters(), lr=0.001)
+optimizer = optim.SGD(params = model.parameters(), lr=0.001)
 
 
 def train(epoch):
